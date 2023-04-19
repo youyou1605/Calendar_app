@@ -1,0 +1,21 @@
+<%= form_with(model: @event, local: true) do |form| %>
+  <div>
+    <%= form.label :タイトル %><br>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :開始時刻 %><br>
+    <%= form.datetime_select :start_time %>
+  </div>
+  <div>
+    <%= form.label :終了時刻 %><br>
+    <%= form.datetime_select :end_time %>
+  </div>
+  <div>
+    <%= form.label :終日 %><br>
+    <%= form.check_box :all_day %>
+  </div>
+  <div>
+    <%= form.submit "更新する" %>
+  </div>
+<% end %>
