@@ -13,7 +13,7 @@
     <%= @event.all_day? ? "はい" : "いいえ" %>
   </p>
   <%= link_to "編集", edit_event_path(@event) %>
-  <%= link_to "削除", event_path(@event), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+  <%= button_to  "削除", event_path(@event), method: :delete, form: { data: { turbo_confirm: "本当に削除しますか？" } }  %>
   <%= link_to "カレンダーに戻る", events_path %>
 <% elsif @events %>
   <% @events.each do |event| %>
@@ -27,7 +27,7 @@
       <%= event.end_time %>
     </p>
     <%= link_to "編集", edit_event_path(event) %>
-    <%= link_to "削除", event_path(event), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <%= button_to  "削除", event_path(event), method: :delete, form: { data: { turbo_confirm: "本当に削除しますか？" } }  %>
   <% end %>
   <%= link_to "カレンダーに戻る", events_path %>
 <% end %>

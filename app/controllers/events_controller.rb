@@ -43,7 +43,7 @@ class EventsController < ApplicationController
     end
     render json: events_json
   end
-  
+
   def edit
     @event = Event.find(params[:id])
   end
